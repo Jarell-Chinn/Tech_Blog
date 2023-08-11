@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const newPostHandler = async (event) => {
   event.preventDefault();
 
