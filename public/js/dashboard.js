@@ -1,22 +1,23 @@
-const newPostHandler = async (event) => {
+const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const topic = document.querySelector("#post-topic").value.trim();
-  const postText = document.querySelector("#post-text").value.trim();
+  const title = document.querySelector("#post-title").value.trim();
 
-  if (topic && postText) {
+  const description = document.querySelector("#post-desc").value.trim();
+
+  if (title && description) {
     const response = await fetch(`/api/posts`, {
       method: "POST",
-      body: JSON.stringify({ topic, postText }),
+      body: JSON.stringify({ title, description }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
-      alert(`Couldn't create post`);
+      alert("Failed to create post");
     }
   }
 };
@@ -25,20 +26,21 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
-    const response = await fetch(`/api/post/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: "DELETE",
     });
+
     if (response.ok) {
       document.location.replace("/dashboard");
     } else {
-      alert(`Couldn't Delete post`);
+      alert("Failed to delete post");
     }
   }
 };
 
 document
   .querySelector(".new-post-form")
-  .addEventListener("submit", newPostHandler);
+  .addEventListener("submit", newFormHandler);
 
 document
   .querySelector(".post-list")
