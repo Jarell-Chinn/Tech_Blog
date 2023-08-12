@@ -25,7 +25,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: "404 not found" });
+      res.status(404).json({ message: "404 Post not found" });
       return;
     }
 
