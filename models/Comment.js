@@ -12,21 +12,18 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // Comment_text datatype string
-    comment_text: {
+    comment_description: {
       type: DataTypes.STRING,
     },
-    // date created datatype date, dont allow NULL, Default value = DataType.now
-    date: {
+    date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    // Post_id data type integer refers to Post id
-    post_id: {
+    blog_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "post",
+        model: "blog",
         key: "id",
       },
     },
@@ -43,7 +40,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Comment",
+    modelName: "comment",
   }
 );
 

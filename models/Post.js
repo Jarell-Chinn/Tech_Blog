@@ -12,14 +12,11 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // topic datatype String, dont allow NULL
-    topic: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // Post_text datatype string
-
-    post_text: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -43,7 +40,7 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Post",
+    modelName: "blog",
   }
 );
 
