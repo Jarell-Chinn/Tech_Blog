@@ -1,3 +1,15 @@
 body {
-  background-color: rgb(64, 106, 128);
+  background-color: grey;
+}
+
+.formCont {
+  margin-top: 10px;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerRow {
+  background-color: rgb(117, 112, 112);
+  margin-bottom: 10px;
 }

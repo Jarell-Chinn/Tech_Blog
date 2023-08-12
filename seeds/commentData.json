@@ -1,7 +1,7 @@
 [
   {
     "post_id": 1,
-    "comment_text": "Test comment",
+    "comment_description": "Test comment",
     "user_id": 1
   }
 ]
